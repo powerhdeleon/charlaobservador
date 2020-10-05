@@ -1,0 +1,20 @@
+<script  type="module">
+    import BeerSubject from "./beersubject.js";
+    import BezaelObserver from "./bezaelobserver.js";
+    import HectorObserver from "./hectorobserver.js";
+
+    let beer = new BeerSubject();
+
+    let bezael = new BezaelObserver();
+    let hector = new HectorObserver();
+    
+    beer.subscribe(bezael);
+    beer.subscribe(hector);
+    
+    beer.create_sale("2x1");
+
+    beer.unsubscribe(hector);
+
+    beer.create_sale("3x1");
+</script>
+
